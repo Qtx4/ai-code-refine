@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Code Refine</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">&lt;/&gt;</div>
+    <div class="header-text">
+      <h1>AI Code Refine</h1>
+      <p>Bug detection · Auto-fix · Real-time explanations</p>
+    </div>
+    <div class="badges">
+      <span>Python</span><span>JS</span><span>Java</span><span>C++</span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- INPUT PANEL -->
+    <div class="card" id="input-card">
+      <div class="card-toolbar">
+        <div class="dots">
+          <span style="background:#ff5f57"></span>
+          <span style="background:#febc2e"></span>
+          <span style="background:#28c840"></span>
+        </div>
+        <select id="language">
+          <option>Python</option>
+          <option>JavaScript</option>
+          <option>Java</option>
+          <option>C</option>
+          <option>C++</option>
+          <option>TypeScript</option>
+          <option>Go</option>
+          <option>Rust</option>
+          <option>PHP</option>
+          <option>Ruby</option>
+        </select>
+        <span class="hint">Paste your code below</span>
+      </div>
+
+      <textarea id="code-input" placeholder="# Paste your code here...&#10;# Example:&#10;def divide(a, b):&#10;    return a / b&#10;&#10;result = divide(10, 0)&#10;print(result)"></textarea>
+
+      <div class="card-footer">
+        <span id="line-count" class="line-count"></span>
+        <button id="analyze-btn" onclick="analyzeCode()">✦ Refine Code</button>
+      </div>
+    </div>
+
+    <!-- LOADER -->
+    <div id="loader" class="hidden">
+      <div class="spinner"></div>
+      <span>Analyzing your code...</span>
+    </div>
+
+    <!-- ERROR -->
+    <div id="error-box" class="hidden error-box"></div>
+
+    <!-- RESULTS -->
+    <div id="results" class="hidden">
+
+      <!-- Issues -->
+      <div class="card" id="issues-card">
+        <div class="card-header" id="issues-header">
+          <span id="issues-icon">⚠</span>
+          <span id="issues-title">Issues Found</span>
+        </div>
+        <div id="issues-list" class="card-body"></div>
+      </div>
+
+      <!-- Code Comparison -->
+      <div class="code-compare">
+        <div class="code-block">
+          <div class="code-label red">ORIGINAL CODE
+            <button class="copy-btn" onclick="copyCode('original-code')">Copy</button>
+          </div>
+          <pre id="original-code"></pre>
+        </div>
+        <div class="code-block">
+          <div class="code-label green">FIXED CODE
+            <button class="copy-btn" onclick="copyCode('fixed-code')">Copy</button>
+          </div>
+          <pre id="fixed-code"></pre>
+        </div>
+      </div>
+
+      <!-- Explanation -->
+      <div class="card">
+        <div class="card-header blue">
+          <span>💡</span>
+          <span>Explanation</span>
+        </div>
+        <div class="card-body">
+          <p id="explanation"></p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
