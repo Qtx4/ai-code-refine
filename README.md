@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 AI Code Refine
 
 > An AI-powered code review and auto-fix web tool built at the **NASSCOM Generative AI Hackathon** — detects bugs, suggests improvements, and rewrites code in real time using the Groq API.
@@ -129,3 +130,6 @@ MIT License — free to use and modify.
 **Thigulla Jhansi Chandra Reddy**
 2nd Year B.Tech CSE — Anurag University, Hyderabad
 [LinkedIn](https://www.linkedin.com/in/jhansi-chandra-reddy-a14b15382/) | [GitHub](https://github.com/jcreddy-6)
+=======
+# ai-code-refine
+>>>>>>> 74d264c859d7ef9d5910399cca016abdcf6e06a0
